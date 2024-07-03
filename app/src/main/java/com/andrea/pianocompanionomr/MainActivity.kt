@@ -6,10 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.andrea.pianocompanionomr.ui.theme.PianoCompanionOMRTheme
 
@@ -32,10 +34,13 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+    val context = LocalContext.current
+    Button(onClick = { convertMusicXmlToMidi(context.assets.open("IMG_1150.musicxml")) }) {
+        Text(
+            text = "Hello $name!",
+            modifier = modifier
+        )
+    }
 }
 
 @Preview(showBackground = true)
