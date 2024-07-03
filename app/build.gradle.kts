@@ -61,7 +61,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.simple.xml)
     implementation(libs.android.midi.lib)
-//    implementation(libs.musicxml.android)
+    implementation(libs.musicxml.parser)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
