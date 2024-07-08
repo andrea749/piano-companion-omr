@@ -1,7 +1,6 @@
 package com.andrea.pianocompanionomr
 
 import android.util.Log
-import org.simpleframework.xml.*
 import org.simpleframework.xml.core.Persister
 import com.leff.midi.MidiFile
 import com.leff.midi.MidiTrack
@@ -10,6 +9,7 @@ import com.leff.midi.event.NoteOff
 import com.andrea.pianocompanionomr.data.model.*
 import java.io.InputStream
 
+// TODO: return Song for storing in db
 fun convertMusicXmlToMidi(xmlInputStream: InputStream) {
     val score = Persister().read(ScorePartwise::class.java, xmlInputStream)
 

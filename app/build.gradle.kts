@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+//    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -47,6 +49,12 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    sourceSets {
+        getByName("main") {
+            jniLibs.srcDirs("src/main/jniLibs")
+        }
+    }
 }
 
 dependencies {
@@ -61,7 +69,13 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.simple.xml)
     implementation(libs.android.midi.lib)
-    implementation(libs.musicxml.parser)
+    implementation(libs.tickxml.retrofit.converter)
+    implementation(libs.tickxml.processor.common)
+    implementation(libs.okio)
+    implementation(libs.jetbrains.kotlin.reflect)
+    implementation(libs.retrofit)
+    implementation(libs.tickxml.annotation)
+    implementation(libs.tickxml.core)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

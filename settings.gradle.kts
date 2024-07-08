@@ -8,6 +8,10 @@ pluginManagement {
             }
         }
         mavenCentral()
+        maven {
+            url = uri("http://oss.sonatype.org/content/repositories/snapshots")
+            isAllowInsecureProtocol = true
+        }
         gradlePluginPortal()
     }
 }
@@ -18,6 +22,11 @@ dependencyResolutionManagement {
         mavenCentral()
         maven {
             url = uri("https://jitpack.io")
+        }
+
+        maven {
+            url = uri("http://oss.sonatype.org/content/repositories/snapshots")
+            isAllowInsecureProtocol = true
         }
     }
 }
